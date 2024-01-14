@@ -13,18 +13,39 @@
         }
 
         .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #fff;
-            box-shadow: 0 4px 2px -2px gray;
-            transition: top 0.3s;
-            z-index: 1000;
-        }
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /*top:7%;*/
+    transition: top 0.3s; /* Add smooth transition effect */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 1;
+    align-items: center;
+    background: linear-gradient(to right, #ff00aa6d, #ff77009c, #0048ffd6);
+}
 
-        .navbar.hide {
-            top: -56px;
-        }
+
+.navbar.hide {
+    top: -30px; /* Set this value to the negative of the navbar height */
+}
+
+.navbar a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin: 10px;
+}
+
+.navbar a:hover {
+    color: #000000;
+}
+
+
+  .navbar-expanded {
+    height: auto;
+    background-color: #ff00aa6d; /* Adjust background color as needed */
+}
 
         h1 {
             margin-top: 80px;
