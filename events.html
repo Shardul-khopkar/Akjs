@@ -20,6 +20,42 @@
 
 <body>
     <style>
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /*top:7%;*/
+    transition: top 0.3s; /* Add smooth transition effect */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 1;
+    align-items: center;
+    background: linear-gradient(to right, #ff00aa6d, #ff77009c, #0048ffd6);
+}
+
+
+.navbar.hide {
+    top: -30px; /* Set this value to the negative of the navbar height */
+}
+
+.navbar a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin: 10px;
+}
+
+.navbar a:hover {
+    color: #000000;
+}
+
+
+  .navbar-expanded {
+    height: auto;
+    background-color: #ff00aa6d; /* Adjust background color as needed */
+}
+
         .image-container {
   display: inline-block;
 }
@@ -61,7 +97,8 @@
   </div>
     <!-- Main Content Section -->
     <main>
-        <div class="image-container">
+           <center>
+                 <div class="image-container">
             <img src="https://res.cloudinary.com/dylant25/image/upload/v1562886171/travel-1749508_1920.jpg" alt="Lakes" class="hover-image">
             <p>Lakes</p>
           </div>
@@ -84,7 +121,9 @@
           <div class="image-container">
             <img src="https://res.cloudinary.com/dylant25/image/upload/v1562886580/dunes-1129168_1920.jpg" alt="Others" class="hover-image">
             <p>Others</p>
-          </div>
+          </div>   
+           </center>
+      
           
     </main>
 

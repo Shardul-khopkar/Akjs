@@ -19,18 +19,23 @@ h3 {
 }
 
 .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    top:7%;
+    transition: top 0.3s; /* Add smooth transition effect */
     display: flex;
     justify-content: space-between;
     width: 100%;
     z-index: 1;
     align-items: center;
-    
     background: linear-gradient(to right, #ff00aa6d, #ff77009c, #0048ffd6);
-    
-    position: fixed;
 }
 
 
+.navbar.hide {
+    top: -30px; /* Set this value to the negative of the navbar height */
+}
 
 .navbar a {
     color: rgb(255, 255, 255);
@@ -222,19 +227,6 @@ display: inline;
 text-shadow: none;
 }
 
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    top:7%;
-   
-    transition: top 0.3s; /* Add smooth transition effect */
-    z-index: 1; /* Make sure the navbar is above other elements */
-}
-
-.navbar.hide {
-    top: -30px; /* Set this value to the negative of the navbar height */
-}
 
 h5{
     bottom:200px;
