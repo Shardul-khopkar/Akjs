@@ -1,0 +1,241 @@
+body {
+    background: linear-gradient(to right, #1a1a1a, #6b6b6b);
+    color: white;
+    font-family: Arial, sans-serif;
+}
+h3 {
+    text-align: center;
+    padding: 7px;
+    border: #0000008c;
+    background-color: #960a67;
+  
+    border-style: solid;
+    border: width 5px;
+    color: #1a1a1a;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 1;
+    align-items: center;
+    
+    background: linear-gradient(to right, #ff00aa6d, #ff77009c, #0048ffd6);
+    
+    position: fixed;
+}
+
+
+
+.navbar a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin: 10px;
+}
+
+.navbar a:hover {
+    color: #000000;
+}
+
+
+  .navbar-expanded {
+    height: auto;
+    background-color: #ff00aa6d; /* Adjust background color as needed */
+}
+
+#container {
+top:1500px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+}
+.content-container {
+    margin: 20px;
+   
+}
+
+
+.content {
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+
+.content.left {
+    background-color: #ffffffbc;
+    text-align: left;
+    color: #1a1a1a;
+}
+
+.content.right {
+    background-color: #ffffffbc;
+    text-align: right;
+    color: #1a1a1a;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.login-btn {
+    cursor: pointer;
+    align-self: center;
+}
+
+/* Style for the modal */
+#loginModal {
+    color: #171717;
+}
+
+#loginModal .modal-content {
+    background: linear-gradient(to left, #bbbbbb6e, #bbbbbbad, #bbbbbbea);
+    border-radius: 15px;
+}
+
+#loginModal .modal-header {
+    border-bottom: none;
+}
+
+#loginModal .modal-body {
+    padding: 20px;
+}
+
+#loginModal .modal-footer {
+    border-top: none;
+}
+
+.modal-body form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color:rgb(100, 100, 100);
+    padding:20px;
+    border-radius:15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.disclaimer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 1;
+    height: fit-content;
+    /* Prevent line breaks */
+
+}
+
+/* Optional: Add animation for scrolling text */
+.disclaimer p {
+    animation: scrollText 25s alternate-reverse infinite;
+    /* Adjust the duration as needed */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.quote-container {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #1e71ff9f;
+    border-radius: 15px;
+    border: #cacaca;
+    border-width: 2px;
+    padding: 20px;
+    color: #cacaca;
+    border: 2px solid #cacaca;
+}
+
+.quote {
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.author {
+    font-size: 16px;
+    color: #888;
+}
+
+#contact iframe
+{
+width: 100%;
+}
+.contact_1 h3
+{
+display: inline;
+}
+.contact_1 a
+{
+text-shadow: none;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    top:7%;
+   
+    transition: top 0.3s; /* Add smooth transition effect */
+    z-index: 1; /* Make sure the navbar is above other elements */
+}
+
+.navbar.hide {
+    top: -30px; /* Set this value to the negative of the navbar height */
+}
+
+h5{
+    bottom:200px;
+}
