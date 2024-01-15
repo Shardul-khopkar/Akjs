@@ -5,32 +5,41 @@ body {
 }
 h3 {
     text-align: center;
+    top: 0;
     padding: 7px;
-    border: #0000008c;
+    border: 5px solid #0000008c;
     background-color: #960a67;
-  
     border-style: solid;
-    border: width 5px;
+    border-width: 5px;
     color: #1a1a1a;
     position: fixed;
     width: 100%;
-    z-index: 1;
-    top: 0px;
+    height: 65px;
+    z-index: 3;
 }
-
 .navbar {
+    position: fixed;
+     margin-top: 65px; /* Default margin for desktop */
+    width: 100%;
+    transition: top 0.3s; /* Add smooth transition effect */
     display: flex;
     justify-content: space-between;
     width: 100%;
     z-index: 1;
     align-items: center;
-    
     background: linear-gradient(to right, #ff00aa6d, #ff77009c, #0048ffd6);
-    
-    position: fixed;
+}
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+    h3 {
+        margin-top: 0; /* Set margin to 0 on mobile devices */
+    }
 }
 
 
+.navbar.hide {
+    top: -30px; /* Set this value to the negative of the navbar height */
+}
 
 .navbar a {
     color: rgb(255, 255, 255);
@@ -77,7 +86,7 @@ top:1500px;
 
 .content.right {
     background-color: #ffffffbc;
-    text-align: right;
+    text-align: left;
     color: #1a1a1a;
 }
 
@@ -222,19 +231,6 @@ display: inline;
 text-shadow: none;
 }
 
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    top:7%;
-   
-    transition: top 0.3s; /* Add smooth transition effect */
-    z-index: 1; /* Make sure the navbar is above other elements */
-}
-
-.navbar.hide {
-    top: -30px; /* Set this value to the negative of the navbar height */
-}
 
 h5{
     bottom:200px;

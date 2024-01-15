@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title>
+    <title>Important events</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- jQuery -->
@@ -16,34 +16,183 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Add your custom CSS links, scripts, or other metadata here -->
     <!-- Example: <link rel="stylesheet" href="styles.css"> -->
+    <script>
+          var isScrolling = false;
+
+window.addEventListener("scroll", function () {
+    var navBar = document.getElementById("navbar");
+
+    // Add the 'navbar-expanded' class when scrolling down
+    navBar.classList.add("navbar-expanded");
+
+    // Clear the timeout if the user is still scrolling
+    clearTimeout(isScrolling);
+
+    // Set a timeout to hide the navbar after a few seconds
+    isScrolling = setTimeout(function () {
+        navBar.classList.remove("navbar-expanded");
+    }, 3000); // Adjust the duration as needed
+});
+
+
+//v2 scroller
+
+
+var prevScrollPos = window.scrollY !== undefined ? window.scrollY : window.pageYOffset;
+window.onscroll = function () {
+    var currentScrollPos = window.scrollY !== undefined ? window.scrollY : window.pageYOffset;
+    if (prevScrollPos > currentScrollPos) {
+        document.querySelector(".navbar").style.top = "0";
+    } else {
+        document.querySelector(".navbar").style.top = "-56px"; /* Set this value to the negative of the navbar height */
+    }
+    prevScrollPos = currentScrollPos;
+};
+
+    </script>
 </head>
 
 <body>
     <style>
+.disclaimer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 1;
+    height: fit-content;
+    /* Prevent line breaks */
+
+}
+
+/* Optional: Add animation for scrolling text */
+.disclaimer p {
+    animation: scrollText 25s alternate-reverse infinite;
+    /* Adjust the duration as needed */
+    white-space: nowrap;
+    overflow: hidden;
+}
+h3 {
+            text-align: center;
+            top: 0;
+            padding: 7px;
+            border: 5px solid #0000008c;
+            background-color: #960a67;
+            border-style: solid;
+            border-width: 5px;
+            color: #1a1a1a;
+            position: fixed;
+            width: 100%;
+            height: 65px;
+            z-index: 3;
+        }
+.navbar {
+            position: fixed;
+             margin-top: 65px; /* Default margin for desktop */
+            width: 100%;
+            transition: top 0.3s; /* Add smooth transition effect */
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            z-index: 1;
+            align-items: center;
+            background: linear-gradient(to right, #ff00aa6d, #ff77009c, #0048ffd6);
+        }
+
+        .navbar.hide {
+            top: -30px; /* Set this value to the negative of the navbar height */
+        }
+
+        .navbar a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        .navbar a:hover {
+            color: #000000;
+        }
+
+        .navbar-expanded {
+            height: auto;
+            background-color: #ff00aa6d; /* Adjust background color as needed */
+        }
+
         .image-container {
-  display: inline-block;
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-.hover-image {
-  width: 300px; /* or whatever size you want */
-  height: auto;
-  filter: grayscale(100%);
-  transition: filter .5s ease-in-out;
-}
+        .hover-image {
+            width: 450px; /* or whatever size you want */
+            height: 300px;
+            filter: grayscale(700%);
+            transition: filter .10s ease-in-out;
+            border-radius: 15px;
+            margin: 10px;
+        }
 
-.hover-image:hover {
-   filter: grayscale(0%);
-}
+        .hover-image:hover {
+            filter: grayscale(0%);
+            border-radius: 20px;
+            box-shadow: #000000;
+            width: 450px;
+            height: 300px;
+            box-shadow: 0px 0px 20px 4px;
+        }
 
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        
+
+        
+        /* Media query for mobile devices */
+        @media (max-width: 767px) {
+            h3 {
+                margin-top: 0; /* Set margin to 0 on mobile devices */
+            }
+
+            .image-container {
+                padding: 10px;
+            }
+
+            .hover-image {
+                width: 100%; /* Full width on mobile devices */
+            }
+        }
+
+        body {
+            background: linear-gradient(to right, #1a1a1a, #6b6b6b);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 20%;
+            align-self: center;
+            justify-content: center;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .container .image-container {
+            align-items: center;
+            padding: 20px;
+        }
     </style>
 
     <!-- Header Section -->
     <header>
-        <h1>Events</h1>
-        <!-- Add navigation links, logo, or any other header content -->
-        <!-- Example: <nav><a href="#">Home</a> | <a href="#">About</a> | <a href="#">Contact</a></nav> -->
-    </header>
-    <div id="navbar" class="navbar">
+         <div id="navbar" class="navbar">
       <div class="logo"> Navigate to...</div>
       <div class="links">
           <span>
@@ -55,10 +204,16 @@
           <span>
               <a href="teachers.html">Our Teachers</a>
 
-              <a href="newhome2.html">Comments</a>
+              <a href="newhome2.html">Homepage</a>
           </span>
       </div>
   </div>
+  <h3> Sou A.K. Joshi Eng. Med. Sch.</h3>
+        <!-- Add navigation links, logo, or any other header content -->
+        <!-- Example: <nav><a href="#">Home</a> | <a href="#">About</a> | <a href="#">Contact</a></nav> -->
+    </header>
+<br><br><br><br><br><br>
+   
     <!-- Main Content Section -->
     <main>
         <div class="image-container">
@@ -90,9 +245,10 @@
 
     <!-- Footer Section -->
     <footer>
-        <!-- Add footer content, such as copyright information or links -->
-      
-    </footer>
+      <span class="disclaimer">
+          <p> We are not the official school Website.</p>
+      </span>
+  </footer>
 
     <!-- Add your custom JavaScript links or scripts here -->
     <!-- Example: <script src="script.js"></script> -->
