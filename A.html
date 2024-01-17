@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Gallery (A)</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   
+    <link rel="stylesheet" href="yearbook.css">
+    <script>
+        var isScrolling = false;
+
+        window.addEventListener("scroll", function () {
+            var navBar = document.getElementById("navbar");
+
+            // Add the 'navbar-expanded' class when scrolling down
+            navBar.classList.add("navbar-expanded");
+
+            // Clear the timeout if the user is still scrolling
+            clearTimeout(isScrolling);
+
+            // Set a timeout to hide the navbar after a few seconds
+            isScrolling = setTimeout(function () {
+                navBar.classList.remove("navbar-expanded");
+            }, 3000); // Adjust the duration as needed
+        });
+
+
+        //v2 scroller
+
+
+        var prevScrollPos = window.scrollY !== undefined ? window.scrollY : window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.scrollY !== undefined ? window.scrollY : window.pageYOffset;
+            if (prevScrollPos > currentScrollPos) {
+                document.querySelector(".navbar").style.top = "0";
+            } else {
+                document.querySelector(".navbar").style.top =
+                    "-56px"; /* Set this value to the negative of the navbar height */
+            }
+            prevScrollPos = currentScrollPos;
+        };
+    </script>
+</head>
+<title>
+    Yearbook
+</title>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"> Navigate to...</div>
+            <div class="links">
+                <span>
+                    <div class="dropdown">
+                        <a class="dropbtn">Yearbook</a>
+                        <div class="dropdown-content">
+                          <a href="A.html">A</a>
+                          <a href="B.html">B</a>
+                          <a href="C.html">C</a>
+                        </div>
+                      </div>
+    
+                    <div class="dropdown">
+                        <a class="dropbtn">Important Events</a>
+                        <div class="dropdown-content">
+                          <a href="events.html">Pre-Primary</a>
+                          <a href="event1.html">Primary</a>
+                          <a href="event2.html">Secondary</a>
+                        </div>
+                      </div>
+                </span>
+                <br>
+                <span>
+                    <a class="dropbtn"href="teachers.html">Our Teachers</a>
+                    <a class="dropbtn"href="newhome2.html">Homepage</a>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <center>
+        <h3> Sou A.K. Joshi Eng. Med. Sch.</h3>
+        <br><br><br><br><br><br>
+        <div class="container">
+            <!-- Student Row 1 -->
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="student-box">
+                        <img src="student1.jpg" alt="Student 1" class="student-photo img-fluid">
+                        <p>Student 1 Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="student-box">
+                        <img src="student2.jpg" alt="Student 2" class="student-photo img-fluid">
+                        <p>Student 2 Bio: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="student-box">
+                        <img src="student3.jpg" alt="Student 3" class="student-photo img-fluid">
+                        <p>Student 3 Bio: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                            eu fugiat nulla pariatur.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="student-box">
+                        <img src="student4.jpg" alt="Student 4" class="student-photo img-fluid">
+                        <p>Student 4 Bio: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                            deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Student Row 2 -->
+            <div class="row">
+                <!-- Add more students here following the same structure -->
+            </div>
+
+            <!-- Add more rows as needed -->
+
+        </div>
+    </center>
+    <main>
+
+    </main>
+
+
+
+    <footer>
+        <span class="disclaimer">
+            <p> We are not the official school Website.</p>
+        </span>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

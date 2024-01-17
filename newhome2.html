@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Title</title>
+    <title>Homepage</title>
     <!-- Add Bootstrap CSS -->
       
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -12,38 +12,95 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="newhome2.css">
-    <script src="newhome2.js"></script>
+    <script src="newhome2.js">
+        
+    var isScrolling = false;
+
+window.addEventListener("scroll", function () {
+    var navBar = document.getElementById("navbar");
+
+    // Add the 'navbar-expanded' class when scrolling down
+    navBar.classList.add("navbar-expanded");
+
+    // Clear the timeout if the user is still scrolling
+    clearTimeout(isScrolling);
+
+    // Set a timeout to hide the navbar after a few seconds
+    isScrolling = setTimeout(function () {
+        navBar.classList.remove("navbar-expanded");
+    }, 3000); // Adjust the duration as needed
+});
+
+// Add an event listener to your button
+document.querySelector('.login-btn').addEventListener('click', function() {
+// Trigger the modal by selecting it by ID and calling the modal method
+$('#loginModal').modal('show');
+});
+
+
+//v2 scroller
+
+
+var prevScrollPos = window.scrollY !== undefined ? window.scrollY : window.pageYOffset;
+window.onscroll = function () {
+    var currentScrollPos = window.scrollY !== undefined ? window.scrollY : window.pageYOffset;
+    if (prevScrollPos > currentScrollPos) {
+        document.querySelector(".navbar").style.top = "0";
+    } else {
+        document.querySelector(".navbar").style.top = "-56px"; /* Set this value to the negative of the navbar height */
+    }
+    prevScrollPos = currentScrollPos;
+};
+
+
+    </script>
 </head>
 
 <body>
 <footer>
     <span class="disclaimer">
-        <p> We are not the official school website, but we are here to preserve our memories forever.</p>
+        <p> We are not the official school Website.</p>
     </span>
 </footer>
     
-   
-    <br><br>
+   <header>
     <!-- Navbar -->
     <div id="navbar" class="navbar">
         <div class="logo"> Navigate to...</div>
         <div class="links">
             <span>
-                <a href="yearbook.html">Yearbook</a>
+                <div class="dropdown">
+                    <a class="dropbtn">Yearbook</a>
+                    <div class="dropdown-content">
+                      <a href="A.html">A</a>
+                      <a href="B.html">B</a>
+                      <a href="C.html">C</a>
+                    </div>
+                  </div>
 
-                <a href="events.html">Important Events</a>
+                <div class="dropdown">
+                    <a class="dropbtn">Important Events</a>
+                    <div class="dropdown-content">
+                      <a href="events.html">Pre-Primary</a>
+                      <a href="event1.html">Primary</a>
+                      <a href="event2.html">Secondary</a>
+                    </div>
+                  </div>
             </span>
             <br>
             <span>
-                <a href="teachers.html">Our Teachers</a>
+                <a class="dropbtn"href="teachers.html">Our Teachers</a>
 
-                <a href="newhome2.html">Comments</a>
+                <a class="dropbtn"href="newhome2.html">Homepage</a>
             </span>
         </div>
     </div>
-    <h3> Sou A.K. Joshi Eng. Med. Sch.</h3>
-    <br><br><br><br><br>
-    <div class="container">
+   </header>
+      <main>
+     <h3> Sou A.K. Joshi Eng. Med. Sch.</h3>
+     <br><br><br><br><br><br><br>
+     <center>
+        <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="content left">
@@ -58,15 +115,17 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <img id="BestClass" src="BestClass.png" alt="Best Class Image" class="img-fluid">
-                <h4 class="text-center mt-2">Best class "C" 23-24</h4>
+                <img id="BestClass" src="GeogLab.JPG" alt="Best Class Image" class="img-fluid">
+                <h4 class="text-center mt-2">Geography Lab</h4>
             </div>
         </div>
-
+       <br><br><br>
         <div class="row">
              <div class="col-md-6">
-                <img src="logo copy.jpeg" alt="Image Placeholder" class="img-fluid">
+                <img src="Lib.JPG" alt="Image Placeholder" class="img-fluid">
+                <h4 class="text-center mt-2" style="height: 20px; width: 10px;">Library</h4>
             </div>
+            <br><br>
             <div class="col-md-6">
                 <div class="content right">
                     <p>We would like to congratulate all the winners of the various competitions, awards, and
@@ -81,6 +140,8 @@
             </div>
            
         </div>
+     </center>
+    <br><br>
 
         <center>
             <p>As we bid farewell to our school, we would like to share some quotes that reflect our feelings and
@@ -141,8 +202,8 @@
                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
            <center>
             <div class="contact_1 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <a href="mailto:school@gmail.com?Subject=Hi">
-                    <h5><i class="fa fa-envelope"></i>&nbsp;&nbsp;school@gmail.com</h5>
+                <a href="mailto:shakhsharder825@gmail.com?Subject=Hi">
+                    <h5><i class="fa fa-envelope"></i>&nbsp;&nbsp;Message us</h5>
                     <br>
                 </a>
                     </div>
@@ -159,7 +220,7 @@
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" id="password" placeholder="Password">
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">We are working on this.</button>
                         </form>
                     </div>
                         
@@ -175,6 +236,9 @@
 
        
     </div>
+   </main>
+    
+    
 </body>
 
 </html>

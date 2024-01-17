@@ -14,11 +14,45 @@
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Add your custom CSS links, scripts, or other metadata here -->
+    <script>
+            var isScrolling = false;
+
+window.addEventListener("scroll", function () {
+    var navBar = document.getElementById("navbar");
+
+    // Add the 'navbar-expanded' class when scrolling down
+    navBar.classList.add("navbar-expanded");
+
+    // Clear the timeout if the user is still scrolling
+    clearTimeout(isScrolling);
+
+    // Set a timeout to hide the navbar after a few seconds
+    isScrolling = setTimeout(function () {
+        navBar.classList.remove("navbar-expanded");
+    }, 3000); // Adjust the duration as needed
+});
+
+
+//v2 scroller
+
+
+var prevScrollPos = window.scrollY !== undefined ? window.scrollY : window.pageYOffset;
+window.onscroll = function () {
+    var currentScrollPos = window.scrollY !== undefined ? window.scrollY : window.pageYOffset;
+    if (prevScrollPos > currentScrollPos) {
+        document.querySelector(".navbar").style.top = "0";
+    } else {
+        document.querySelector(".navbar").style.top = "-56px"; /* Set this value to the negative of the navbar height */
+    }
+    prevScrollPos = currentScrollPos;
+};
+
+    </script>
     <!-- Example: <link rel="stylesheet" href="styles.css"> -->
 </head>
 
 <body>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="yearbook1.css">
 
     <!-- Header Section -->
     <header>
@@ -38,14 +72,17 @@
             <span>
                 <a href="teachers.html">Our Teachers</a>
 
-                <a href="newhome2.html">Comments</a>
+                <a href="newhome2.html">Homepage</a>
             </span>
         </div>
     </div>
     <!-- Main Content Section -->
     <main>
+         <h3>
+            Sou A.K. Joshi Eng. Med. Sch.
+        </h3>
         <div id="gallery">
-            <h2 id="gH2"> THE GALLERY </h2>
+       
             
             <p id="gImgH1"><a href="#">Lakes</a></p>
             <a href="#" id="gChange"><img id="gImg1" src="https://res.cloudinary.com/dylant25/image/upload/v1562886171/travel-1749508_1920.jpg"></a>
@@ -71,8 +108,9 @@
 
     <!-- Footer Section -->
     <footer>
-        <!-- Add footer content, such as copyright information or links -->
-        <p>&copy; 2024 Your Website. All rights reserved.</p>
+        <span class="disclaimer">
+            <p> We are not the official school Website.</p>
+        </span>
     </footer>
 
     <!-- Add your custom JavaScript links or scripts here -->
